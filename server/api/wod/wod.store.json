@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Dead lifts",
+    "details": {
+      "title":"Weightlifting",
+      "tagline":"Powerlifting and Olympic weightlifting workouts"
+    }
+  },
+  {
+    "name": "Running",
+    "details": {
+      "title":"Cardio",
+      "tagline":"Cardiovascular strengthening and endurance"
+    }
+  },
+  {
+    "name": "Toe touches",
+    "details": {
+      "title":"Stretching",
+      "tagline":"Muscle stretching and conditioning"
+    }
+  }
+]

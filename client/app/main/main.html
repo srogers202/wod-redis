@@ -1,0 +1,55 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>CrossFit WOD List</h1>
+    <p class="lead">Get started with a CrossFit 'Workout of the Day'</p>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Workouts:</h1>
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="wod in wods">
+        <li><a href="#" tooltip="{{wod.details.title}}">{{wod.name}}</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row" ng-show="!adding" style="padding-top: 15px">
+    <div class="col-lg-12">
+      <button class="btn btn-lg" ng-click="adding = true">
+        Add
+      </button>
+    </div>
+  </div>
+  <div class="row" ng-show="adding">
+    <div class="col-lg-12">
+      <h2>Add a New Workout</h2>
+      <form name="newWordForm" ng-submit="addWod()">
+        <div>
+          <label for="wodName">Name</label>
+        </div>
+        <div>
+          <input type="text" id="wodName" ng-model="newWod.name" />
+        </div>
+        <div style="padding-top: 15px">
+          <label for="wodTitle">Title</label>
+        </div>
+        <div>
+          <input type="text" id="wodTitle" ng-model="newWod.details.title" />
+        </div>
+        <div style="padding-top: 15px">
+          <button ng-show="newWod.name && newWod.details.title" class="btn btn-med" type="submit">Add</button>
+          <button class="btn btn-med" ng-click="editing = false">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer class="footer" style="position:absolute;bottom:50px; width: 100%">
+  <div class="container">
+      <p>Crossfit WOD Generator - Generated with Angular Fullstack v2.0.13</p>
+  </div>
+</footer>
